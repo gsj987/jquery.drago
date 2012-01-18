@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample Usage</title>
+    <style type="text/css">
+      body {
+        background-color: #F2F2F2;
+        width: 2300px;
+        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+      }
+
+      .page {
+        background-color: #FFF;
+        float: left;
+        padding: 10px;
+        position: relative;
+        width: 1122px; height: 794px;
+      }
+
+      .page-l {
+        box-shadow: -5px 1px 10px 0 #B0B0B0;
+        -moz-box-shadow: -5px 1px 10px 0 #B0B0B0;
+        -webkit-box-shadow: -5px 1px 10px 0 #B0B0B0;
+      }
+
+      .page-r {
+        box-shadow: 5px 1px 10px 0 #B0B0B0;
+        -moz-box-shadow: 5px 1px 10px 0 #B0B0B0;
+        -webkit-box-shadow: 5px 1px 10px 0 #B0B0B0;
+      }
+
+      .textblock {
+        background-repeat: none;
+        position: relative;
+        width: 990px; height: 614px;
+
+      }
+
+      .textblock-l { margin: 72px 54px 108px 72px; }
+
+      .textblock-r { margin: 72px 72px 108px 54px; }
+
+      .page-l h1, .page-l p {
+        position: absolute;
+        resize: both;
+        overflow: hidden;
+      }
+
+      .page h1 {
+        margin-bottom: 1em;
+        font-size: 72px;
+        line-height: 1em;
+      }
+
+      .page p {
+        margin-bottom: 1.38em;
+        font-size: 13px;
+        line-height: 1.38em;
+      }
+
+      .page img { position: relative; }
+
+      .textblock-l p:first-of-type::first-letter {
+        float: left;
+        font-size: 72px;
+        line-height: 50px;
+      }
+
+      .textblock-l p:first-of-type span { text-transform: uppercase; }
+
+      .textblock-l h1               { left: -2px;  top: 264.233px; width: 783px; height: 221px; }
+      .textblock-l p:first-of-type  { left: -4px;  top: -13px;     width: 179px; height: 250px; }
+      .textblock-l p:nth-of-type(2) { left: 198px; top: -13px;     width: 179px; height: 220px; }
+      .textblock-l p:last-of-type   { left: 398px; top: -15px;     width: 179px; height: 165px; }
+      .textblock-l img              { left: 658px; top: -18px;     width: 334px; height: 447px; }
+
+      .textblock-r p { position: relative; margin-top: 0; }
+
+      .textblock-r .col-wrapper {
+        columns: 3 32px;
+        -moz-columns: 3;
+        -webkit-columns: 3;
+        left: 1px; top: 1px; width: 575px; height: 420px;
+        resize: both;
+        overflow: hidden;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="page page-l">
+      <div class="textblock textblock-l">
+        <h1>An Excerpt From<br/> Lewis Carroll&rsquo;s<br/><i>Alice in Wonderland</i></h1>
+
+        <p><span>By the time</span> she had caught the flamingo and brought it back, the fight  was over, and both the hedgehogs were out of sight: &lsquo;but it doesn't matter much,&rsquo; thought Alice, &lsquo;as all the arches are gone from this side of the ground.&rsquo; So she tucked it away under her arm, that it might not escape again, and went back for a little more conversation with her friend.</p>
+
+        <p>When she got back to the Cheshire Cat, she was surprised to find quite a large crowd collected round it: there was a dispute going on between the executioner, the King, and the Queen, who were all talking at once, while all the rest were quite silent, and looked very uncomfortable.</p>
+
+        <p>The moment Alice appeared, she was appealed to by all three to settle the question, and they repeated their arguments to her, though, as they  all spoke at once, she found it very hard indeed to make out exactly what they said.</p>
+
+        <img src="alice.jpg" alt="Alice" />
+      </div>
+    </section>
+
+    <section class="page page-r">
+      <div class="textblock textblock-r">
+        <div class='col-wrapper'>
+          <p>'I should like to have it explained,' said the Mock Turtle.</p>
+
+          <p>'She can't explain it,' said the Gryphon hastily. 'Go on with the next  verse.'</p>
+
+          <p>'But about his toes?' the Mock Turtle persisted. 'How COULD he turn them  out with his nose, you know?'</p>
+
+          <p>'It's the first position in dancing.' Alice said; but was dreadfully  puzzled by the whole thing, and longed to change the subject.</p>
+
+          <p>'Go on with the next verse,' the Gryphon repeated impatiently: 'it  begins "I passed by his garden."'</p>
+
+          <p>Alice did not dare to disobey, though she felt sure it would all come  wrong, and she went on in a trembling voice:&mdash;</p>
+
+          <p>'I passed by his garden, and marked, with one eye,    How the Owl and the Panther were sharing a pie&mdash;'        [later editions continued as follows    The Panther took pie-crust, and gravy, and meat,    While the Owl had the dish as its share of the treat.    When the pie was all finished, the Owl, as a boon,    Was kindly permitted to pocket the spoon:    While the Panther received knife and fork with a growl,    And concluded the banquet&mdash;]</p>
+
+          <p>'What IS the use of repeating all that stuff,' the Mock Turtle  interrupted, 'if you don't explain it as you go on? It's by far the most  confusing thing I ever heard!'</p>
+
+          <p>'Yes, I think you'd better leave off,' said the Gryphon: and Alice was  only too glad to do so.</p>
+
+          <p>'Shall we try another figure of the Lobster Quadrille?' the Gryphon went  on. 'Or would you like the Mock Turtle to sing you a song?'</p>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" ></script>
+    <script src="../jquery.drago.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $('.textblock-l').find('h1, p:first, p:nth(1), img')
+                       .drago({ grid: { x: 2, y: 18 } })
+                       .end()
+                       .find('p:last')
+                       .drago({ snap: false })
+                       .end()
+                       .end()
+                       .find('.textblock-r .col-wrapper')
+                       .drago({ snap: false });
+    </script>
+  </body>
+</html>

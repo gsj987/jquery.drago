@@ -1,0 +1,41 @@
+h1. "I must [-break-] drag you."
+
+Introducing Drago, a lightweight drag-and-resize jQuery plugin with a mean punch aimed at editorial design in the browser.
+
+Don't worry, you don't need to be a Russian boxer to use Drago. Simply inject the [-steroid-] script into any page you want to design, specifying which elements you want to manipulate. For instance, suppose your page structure looks like this:
+
+<pre lang="html">
+<div id="container">
+  <h1>An excerpt from Lewis Carroll's <i>Alice in Wonderland</i></h1>
+
+  <p>By the time she had caught the flamingo and brought it back, the fight  was over, and both the hedgehogs were out of sight: 'but it doesn't  matter much,' thought Alice, 'as all the arches are gone from this side  of the ground.' So she tucked it away under her arm, that it might not  escape again, and went back for a little more conversation with her  friend.</p>
+
+  <p>When she got back to the Cheshire Cat, she was surprised to find quite a  large crowd collected round it: there was a dispute going on between  the executioner, the King, and the Queen, who were all talking at once,  while all the rest were quite silent, and looked very uncomfortable.</p>
+
+  <p>The moment Alice appeared, she was appealed to by all three to settle  the question, and they repeated their arguments to her, though, as they  all spoke at once, she found it very hard indeed to make out exactly  what they said.</p>
+</div>
+</pre>
+
+Let's say you want to be able to drag and resize the @h1@ and @p@ tags, but don't want to be able to resize or snap the very last @p@ to a grid. That's as easy as doing this in your script:
+
+<pre lang="javascript">
+  $('h1, p:first, p:nth(1)').drago().end().find('p:last').drago({ snap: false, resize: false });
+</pre>
+
+Now, simply click and drag those elements around. Double-clicking on any moved element will display the CSS properties that you can copy and paste into your stylesheet. Bear in mind that, in order for Drago to do its magic, any element you want to drag must use @position: relative|absolute@. 
+
+h2. "If he [-dies-] drags, he [-dies-] drags."
+
+Drago supports the following options:
+
+@grid@ - an object containing the x and y values, in pixels, for snapping an element to a grid; defaults to @grid: { x: 20, y: 20 }@
+@snap@ - enable or disable using the grid values to snap elements to a grid; defaults to @true@
+@resize@ - enable or disable resizing of elements; defaults to @true@
+
+h2. "I [-fight-] drag for me! FOR ME!"
+
+Some caveats about using Drago. First, it currently requires jQuery 1.7.x or higher. Secondly, resizing elements is dependant on the browser's implementation. In other words, Drago doesn't provide any fallbacks.
+
+h2. License
+
+Aptly licensed under the "WTFPL":http://sam.zoy.org/wtfpl/COPYING.
