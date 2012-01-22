@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drago Tests</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://raw.github.com/visionmedia/expect.js/master/expect.js"></script>
+    <script src="https://raw.github.com/visionmedia/mocha/master/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="../jquery.drago.min.js"></script>
+    <script src="test.drago.js"></script>
+    <script>
+      $(function () {
+        mocha.run()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>
