@@ -1,5 +1,5 @@
 /**
- * jQuery Drago v0.1.0
+ * jQuery Drago v0.1.1
  * A lightweight drag and resize plugin meant for editorial design
  * in the browser.
  *
@@ -33,13 +33,8 @@
 
   // updates the location of the element only if it's not being resized
   Drago.prototype.drag = function(e, data) {
-    var $this = $(this),
-        dimensions = $this.data();
-
-    if (dimensions.height === $this.height() && dimensions.width === $this.width()) {
-      $this.css({ left: data.x, top: data.y });
-    }
-
+    var $this = $(this);
+    $this.css({ left: data.x, top: data.y });
     $this.data({ height: $this[0].offsetHeight, width: $this[0].offsetWidth });
   };
 
@@ -53,6 +48,7 @@
           $pre = $('<pre/>'),
           $a = $('<a>x</a>', { href: "#" });
 
+      // TODO: move most of this CSS into a style tag
       $div.css({
         background: '#fff',
         color: '#000',
@@ -76,10 +72,10 @@
         right: 5,
         fontFamily: 'sans-serif',
         fontWeight: 'bold'
-      }).hover(function(e) {
+      }).on('mouseenter', function(e) {
           $(this).css({ cursor: 'pointer', color: 'red' });
         })
-        .mouseout(function(e) {
+        .on('mouseleave', function(e) {
           $(this).css({ color: '#000' });
         })
         .on('click', function(e) {
