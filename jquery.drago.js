@@ -1,5 +1,5 @@
 /**
- * jQuery Drago v0.1.1
+ * jQuery Drago v0.1.2
  * A lightweight drag and resize plugin meant for editorial design
  * in the browser.
  *
@@ -46,39 +46,15 @@
     if ($el[0].style.left !== '' && $el[0].style.top !== '') {
       var $div = $('<div/>'),
           $pre = $('<pre/>'),
-          $a = $('<a>x</a>', { href: "#" });
+          $a = $('<a>x</a>');
 
-      // TODO: move most of this CSS into a style tag
-      $div.css({
-        background: '#fff',
-        color: '#000',
-        border: '1px solid gray',
-        padding: 18,
-        position: 'absolute',
-        top: $el.offset().top - 50,
-        left: $el.offset().left + 50,
-        zIndex: 100,
-        fontFamily: 'monospace'
-      });
+      $div.addClass('drago').css({ top: $el.offset().top - 50, left: $el.offset().left + 50 });
 
       var text = 'left: ' + $el[0].style.left + '; top: ' + $el[0].style.top + '; ' +
                  'width: ' + $el.width() + 'px; height: ' + $el.height() + 'px;';
       $pre.text(text);
 
-      $a.css({
-        display: 'inline',
-        position: 'absolute',
-        top: 2,
-        right: 5,
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold'
-      }).on('mouseenter', function(e) {
-          $(this).css({ cursor: 'pointer', color: 'red' });
-        })
-        .on('mouseleave', function(e) {
-          $(this).css({ color: '#000' });
-        })
-        .on('click', function(e) {
+      $a.prop('href', '#').on('click', function(e) {
           e.preventDefault();
           $el.trigger('drago.hide', { elem: $(this) });
         });
@@ -183,6 +159,21 @@
       };
     }
   }
+
+
+  !function _createBaseStyles() {
+    var css = [
+      '.drago, .drago a { color: #000; position: absolute; }',
+      '.drago { background: #fff; border: 1px solid gray; padding: 9px; z-index: 1; font-family: monospace; }',
+      '.drago a { display: inline; top: 2px; right: 5px; font-family: sans-serif; font-weight: bold; text-decoration: none; }',
+      '.drago a:hover { cursor: pointer; color: red; }'
+    ].join().replace(/\},/g, '} ');
+
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.textContent = css;
+    $('head').append(style);
+  }()
 
 
   $.fn.drago = function(options) {
