@@ -6,7 +6,17 @@
  * Original author: @kuroi_kenshi (hostsamurai)
  * Licensed under the WTFPL http://sam.zoy.org/wtfpl/COPYING
  */
-define(["zepto"], function($) {
+(function(global, factory) {
+  if (typeof define === 'function' && define.amd) {
+  	define(function() {
+    	return factory(global, document);
+    });
+  } else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = factory(global, global.document);
+  } else {
+    global.Shake = factory(global, global.document);
+  }
+}(Zepto, function($, document) {
 
   var Drago = function(el, opts) {
     this._$el = $(el);
