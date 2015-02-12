@@ -6,7 +6,7 @@
  * Original author: @kuroi_kenshi (hostsamurai)
  * Licensed under the WTFPL http://sam.zoy.org/wtfpl/COPYING
  */
-;(function($, document) {
+define(["zepto"], function($) {
 
   var Drago = function(el, opts) {
     this._$el = $(el);
@@ -203,4 +203,4 @@
     resize: true
   };
 
-})(jQuery, document);
+})

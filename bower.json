@@ -1,0 +1,22 @@
+{
+  "name": "jquery.drago",
+  "main": "jquery.drago.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gsj987/jquery.drago",
+  "authors": [
+    "Lou Jian <gsj987@gmail.com>"
+  ],
+  "description": "A lightweight drag and resize plugin meant for editorial design in the browser",
+  "keywords": [
+    "drag",
+    "resize"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
