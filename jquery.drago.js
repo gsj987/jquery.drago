@@ -12,9 +12,10 @@
     	return factory(global, document);
     });
   } else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = factory(global, global.document);
+		require('zepto');	
+		module.exports = factory(global, document);
   } else {
-    global.Shake = factory(global, global.document);
+    factory(global, document);
   }
 }(Zepto, function($, document) {
 
